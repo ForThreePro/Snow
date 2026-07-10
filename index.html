@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNOW FLOWER GIRLS | Reclutamiento</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      background: linear-gradient(135deg, #FFB6E6 0%, #B0E0FF 50%, #004AAD 100%);
+      font-family: 'Quicksand', sans-serif; 
+      color: #fff; 
+      font-style: italic;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Copos de nieve cayendo */
+    .snowflake {
+      position: fixed;
+      top: -10%;
+      color: #fff;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 0;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    .container { max-width: 700px; margin: 0 auto; padding: 30px 20px; position: relative; z-index: 1; }
+
+    .header { 
+      text-align: center; 
+      padding: 40px 20px; 
+      background: rgba(255,182,230,0.2);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 25px;
+      backdrop-filter: blur(20px);
+      margin-bottom: 30px;
+      box-shadow: 0 0 50px rgba(176,224,255,0.4);
+    }
+
+    .logo { 
+      font-size: 10vw; 
+      font-weight: 700; 
+      background: linear-gradient(45deg, #FF69B4, #E0F7FF, #87CEEB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    .tag { color: #FFF0F5; font-size: 4.5vw; font-weight: 600; }
+
+    .card { 
+      background: rgba(255,255,255,0.15); 
+      border-left: 4px solid #FF69B4; 
+      border-radius: 20px; 
+      padding: 25px; 
+      margin: 25px 0; 
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .card.team { border-left: 4px solid #00BFFF; }
+    .card.alert { border-left: 4px solid #FFB6E6; background: rgba(255,182,230,0.25); }
+
+    .card h2 { 
+      font-size: 6vw; 
+      margin-bottom: 15px; 
+      display: flex; 
+      align-items: center; 
+      gap: 10px;
+      color: #FF69B4;
+    }
+    .card.team h2 { color: #00BFFF; }
+    .card.alert h2 { color: #FFF0F5; }
+
+    .list { font-size: 4vw; line-height: 2.2; font-weight: 500; }
+    .list li { list-style: none; padding-left: 30px; position: relative; margin: 10px 0; }
+    .list li::before { content: '🌸'; position: absolute; left: 0; }
+
+    .tag-box {
+      background: linear-gradient(90deg, #FF69B4, #00BFFF);
+      padding: 8px 15px;
+      border-radius: 15px;
+      display: inline-block;
+      margin: 10px 0;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(255,105,180,0.5);
+    }
+
+    .btn { 
+      display: block; 
+      text-align: center; 
+      background: linear-gradient(90deg, #FF69B4, #00BFFF); 
+      color: white;
+      padding: 20px; 
+      border-radius: 20px; 
+      text-decoration: none; 
+      font-size: 5vw; 
+      font-weight: 700; 
+      margin: 30px 0; 
+      box-shadow: 0 0 40px rgba(255,105,180,0.6);
+    }
+
+    .footer { text-align: center; color: #FFF0F5; font-size: 3.5vw; margin-top: 30px; }
+
+    @media (min-width: 600px) { 
+      .logo { font-size: 50px; } 
+      .tag, .list, .btn { font-size: 18px; } 
+      .card h2 { font-size: 24px; } 
+    }
+  </style>
+</head>
+<body>
+  <!-- Copos de nieve -->
+  <div class="snowflake" style="left:10%; font-size:1.5rem; animation-duration:8s;">❄</div>
+  <div class="snowflake" style="left:25%; font-size:2rem; animation-duration:10s; animation-delay:1s;">❅</div>
+  <div class="snowflake" style="left:40%; font-size:1.2rem; animation-duration:7s; animation-delay:2s;">❆</div>
+  <div class="snowflake" style="left:55%; font-size:1.8rem; animation-duration:12s; animation-delay:0.5s;">❄</div>
+  <div class="snowflake" style="left:70%; font-size:1.4rem; animation-duration:9s; animation-delay:1.5s;">❅</div>
+  <div class="snowflake" style="left:85%; font-size:2.2rem; animation-duration:11s;">❆</div>
+
+  <div class="container">
+    <div class="header">
+      <h1 class="logo">SNOW FLOWER GIRLS</h1>
+      <p class="tag">🌸 RECLUTAMIENTO FEMENINO ❄</p>
+    </div>
+
+    <div class="card">
+      <h2>CLAN SNOW FLOWER</h2>
+      <ul class="list">
+        <li>Edad +15</li>
+        <li>90 en guerra semanal</li>
+        <li>Icono celeste del duo dinámico</li>
+        <li>Fondo predeterminado</li>
+      </ul>
+    </div>
+
+    <div class="card team">
+      <h2>TEAM SNOW FLOWER</h2>
+      <ul class="list">
+        <li>Edad +15</li>
+        <li>Nvl +45</li>
+        <li>Jugamos todo tipo de actividades: mapa abierto, vs, etc</li>
+        <li>Pasar Foto, IG y Nick del juego para banners</li>
+        <li>Tag: <span class="tag-box">(メ)</span> <i>Se da Plazo</i></li>
+        <li>Se piden 10 actividades por mes</li>
+      </ul>
+    </div>
+
+    <div class="card alert">
+      <h2>ACLARACIONES IMPORTANTES</h2>
+      <ul class="list">
+        <li>Al entrar al link de reclu especificar si entra al <b>CLAN</b> o <b>TEAM</b></li>
+      </ul>
+    </div>
+
+    <a class="btn" href="https://chat.whatsapp.com/E8er1kUh1fWFUggxpNRKDO?s=cl&p=a&ilr=1">UNIRME A SNOW FLOWER 🌸</a>
+
+    <p class="footer">CLAN DE CHICAS | COLORES: ROSA HIELO + CELESTE ❄ | 2026</p>
+  </div>
+</body>
+</html>
