@@ -16,120 +16,50 @@
       font-weight: 500;
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
     }
 
-    /* Copos de nieve cayendo + brillo */
-    .snowflake {
-      position: fixed;
-      top: -10%;
-      color: #E0FFFF;
-      user-select: none;
-      pointer-events: none;
-      animation: fall linear infinite;
-      z-index: 0;
-      text-shadow: 0 0 10px rgba(224,255,255,0.8);
-    }
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.3; }
-    }
+    .snowflake { position: fixed; top: -10%; color: #E0FFFF; animation: fall linear infinite; z-index: 0; text-shadow: 0 0 10px rgba(224,255,255,0.8); }
+    @keyframes fall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0.3; } }
 
-    .container { max-width: 750px; margin: 0 auto; padding: 30px 20px; position: relative; z-index: 1; }
+    .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; position: relative; z-index: 1; }
 
-    /* SECCIÓN HEADER */
-    .header { 
-      text-align: center; 
-      padding: 50px 20px; 
-      background: rgba(176,224,230,0.2);
-      border: 2px solid rgba(224,255,255,0.5);
-      border-radius: 25px;
-      backdrop-filter: blur(20px);
-      margin-bottom: 35px;
-      box-shadow: 0 0 50px rgba(176,224,230,0.4);
-    }
-    .logo { 
-      font-size: 10vw; 
-      font-weight: 700; 
-      background: linear-gradient(90deg, #E0FFFF, #B0E0E6, #87CEEB);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
+    .header { text-align: center; padding: 50px 20px; background: rgba(176,224,230,0.2); border: 2px solid rgba(224,255,255,0.5); border-radius: 25px; backdrop-filter: blur(20px); margin-bottom: 35px; }
+    .logo { font-size: 10vw; font-weight: 700; background: linear-gradient(90deg, #E0FFFF, #B0E0E6, #87CEEB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; }
     .tag { color: #E0FFFF; font-size: 4.5vw; font-weight: 600; }
 
-    /* SECCIÓN TARJETAS */
-    .section-title {
-      text-align: center;
-      font-size: 5vw;
-      color: #B0E0E6;
-      margin: 30px 0 15px;
-      font-weight: 700;
-    }
+    .section-title { text-align: center; font-size: 5vw; color: #B0E0E6; margin: 30px 0 15px; font-weight: 700; }
 
-    .card { 
-      background: rgba(224,255,255,0.12); 
-      border: 2px solid rgba(176,224,230,0.4);
-      border-radius: 22px; 
-      padding: 28px; 
-      margin: 22px 0; 
-      backdrop-filter: blur(18px);
-      transition: 0.3s;
-    }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(176,224,230,0.4); }
-
+    .card { background: rgba(224,255,255,0.12); border: 2px solid rgba(176,224,230,0.4); border-radius: 22px; padding: 28px; margin: 22px 0; backdrop-filter: blur(18px); }
     .card.clan { border-left: 6px solid #B0E0E6; }
     .card.team { border-left: 6px solid #1E90FF; }
-    .card.alert { border-left: 6px solid #E0FFFF; background: rgba(224,255,255,0.18); }
+    .card.vs { border-left: 6px solid #87CEEB; }
+    .card.alert { border-left: 6px solid #E0FFFF; }
 
-    .card h2 { 
-      font-size: 6vw; 
-      margin-bottom: 18px; 
-      color: #B0E0E6;
-      display: flex; align-items: center; gap: 12px;
-      font-weight: 700;
-    }
+    .card h2 { font-size: 6vw; margin-bottom: 18px; color: #B0E0E6; display: flex; align-items: center; gap: 12px; font-weight: 700; }
     .card.team h2 { color: #1E90FF; }
-    .card.alert h2 { color: #E0FFFF; }
+    .card.vs h2 { color: #87CEEB; }
 
-    .divider {
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #B0E0E6, transparent);
-      margin: 40px 0;
-    }
+    .divider { height: 2px; background: linear-gradient(90deg, transparent, #B0E0E6, transparent); margin: 40px 0; }
 
     .list { font-size: 4vw; line-height: 2.3; font-weight: 500; }
     .list li { list-style: none; padding-left: 32px; position: relative; margin: 12px 0; }
-    .list li::before { content: '❄'; position: absolute; left: 0; color: #B0E0E6; font-size: 1.2em; }
+    .list li::before { content: '❄'; position: absolute; left: 0; color: #B0E0E6; }
 
-    .tag-box {
-      background: linear-gradient(90deg, rgba(30,144,255,0.5), rgba(176,224,230,0.5));
-      padding: 8px 16px;
-      border-radius: 15px;
-      display: inline-block;
-      font-weight: 700;
-      color: #E0FFFF;
-      border: 1px solid #B0E0E6;
-      box-shadow: 0 0 15px rgba(176,224,230,0.5);
-    }
+    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; }
+    .gallery-item { background: rgba(176,224,230,0.2); border: 2px solid rgba(224,255,255,0.4); border-radius: 15px; overflow: hidden; transition: 0.3s; }
+    .gallery-item:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(176,224,230,0.6); }
+    .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .gallery-caption { padding: 12px; text-align: center; font-size: 3.5vw; background: rgba(0,31,63,0.6); color: #E0FFFF; font-weight: 600; }
 
-    /* SECCIÓN BOTÓN */
+    .vs-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+    .stat-box { background: rgba(176,224,230,0.25); border: 1px solid rgba(224,255,255,0.4); border-radius: 15px; padding: 15px; text-align: center; }
+    .stat-num { font-size: 8vw; font-weight: 700; color: #E0FFFF; }
+    .stat-label { font-size: 3.5vw; color: #B0E0E6; }
+
+    .tag-box { background: linear-gradient(90deg, rgba(30,144,255,0.5), rgba(176,224,230,0.5)); padding: 8px 16px; border-radius: 15px; font-weight: 700; color: #E0FFFF; border: 1px solid #B0E0E6; }
     .btn-section { text-align: center; margin: 40px 0; }
-    .btn { 
-      display: inline-block; 
-      background: linear-gradient(90deg, #B0E0E6, #1E90FF); 
-      color: #001F3F;
-      padding: 20px 40px; 
-      border-radius: 20px; 
-      text-decoration: none; 
-      font-size: 5vw; 
-      font-weight: 700; 
-      box-shadow: 0 0 40px rgba(176,224,230,0.7);
-      border: 2px solid rgba(224,255,255,0.5);
-    }
+    .btn { display: inline-block; background: linear-gradient(90deg, #B0E0E6, #1E90FF); color: #001F3F; padding: 20px 40px; border-radius: 20px; text-decoration: none; font-size: 5vw; font-weight: 700; border: 2px solid rgba(224,255,255,0.5); }
 
-    /* SECCIÓN FOOTER */
     .footer { text-align: center; color: #E0FFFF; font-size: 3.5vw; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(176,224,230,0.4); }
 
     @media (min-width: 600px) { 
@@ -137,31 +67,25 @@
       .section-title { font-size: 28px; }
       .tag, .list, .btn { font-size: 18px; } 
       .card h2 { font-size: 24px; } 
+      .stat-num { font-size: 40px; }
+      .stat-label, .gallery-caption { font-size: 16px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
-  <!-- Copos de nieve cayendo -->
   <div class="snowflake" style="left:5%; font-size:1.4rem; animation-duration:8s;">❄</div>
-  <div class="snowflake" style="left:15%; font-size:1.8rem; animation-duration:12s; animation-delay:1s;">❅</div>
-  <div class="snowflake" style="left:25%; font-size:1.2rem; animation-duration:10s; animation-delay:2s;">❆</div>
-  <div class="snowflake" style="left:35%; font-size:2rem; animation-duration:14s;">❄</div>
-  <div class="snowflake" style="left:45%; font-size:1.5rem; animation-duration:9s; animation-delay:1.5s;">❅</div>
-  <div class="snowflake" style="left:55%; font-size:1.3rem; animation-duration:11s; animation-delay:3s;">❆</div>
-  <div class="snowflake" style="left:65%; font-size:1.9rem; animation-duration:13s;">❄</div>
-  <div class="snowflake" style="left:75%; font-size:1.6rem; animation-duration:10s; animation-delay:2s;">❅</div>
-  <div class="snowflake" style="left:85%; font-size:1.4rem; animation-duration:8s; animation-delay:0.5s;">❆</div>
-  <div class="snowflake" style="left:95%; font-size:2.1rem; animation-duration:15s; animation-delay:1s;">❄</div>
+  <div class="snowflake" style="left:30%; font-size:1.8rem; animation-duration:12s; animation-delay:1s;">❅</div>
+  <div class="snowflake" style="left:60%; font-size:1.5rem; animation-duration:9s; animation-delay:1.5s;">❆</div>
+  <div class="snowflake" style="left:85%; font-size:1.4rem; animation-duration:8s; animation-delay:0.5s;">❄</div>
 
   <div class="container">
     
-    <!-- SECCIÓN 1: HEADER -->
     <section class="header">
       <h1 class="logo">SNOW FLOWER</h1>
       <p class="tag">❄ RECLUTAMIENTO FEMENINO INVIERNO ❄</p>
     </section>
 
-    <!-- SECCIÓN 2: CLAN -->
     <h2 class="section-title">CLAN OFICIAL</h2>
     <section class="card clan">
       <h2>❄ CLAN SNOW FLOWER</h2>
@@ -175,7 +99,6 @@
 
     <div class="divider"></div>
 
-    <!-- SECCIÓN 3: TEAM -->
     <h2 class="section-title">TEAM COMPETITIVO</h2>
     <section class="card team">
       <h2>🏆 TEAM SNOW FLOWER</h2>
@@ -191,7 +114,29 @@
 
     <div class="divider"></div>
 
-    <!-- SECCIÓN 4: ACLARACIONES -->
+    <h2 class="section-title">NUESTROS LOGROS</h2>
+    <section class="card vs">
+      <h2>⚔️ VS GANADOS</h2>
+      <div class="vs-stats">
+        <div class="stat-box"><div class="stat-num">50+</div><div class="stat-label">VS Ganados</div></div>
+        <div class="stat-box"><div class="stat-num">95%</div><div class="stat-label">WinRate</div></div>
+      </div>
+
+      <!-- GALERÍA CON TUS FOTOS -->
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://files.evogb.win/vIw7RZ.jpg" alt="Marcador VS Vixens">
+          <div class="gallery-caption">📊 Marcador vs Team Vixens</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://files.evogb.win/aMgIHK.jpg" alt="MVP VS Vixens">
+          <div class="gallery-caption">👑 MVP vs Team Vixens</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
     <section class="card alert">
       <h2>📢 ACLARACIONES</h2>
       <ul class="list">
@@ -199,12 +144,10 @@
       </ul>
     </section>
 
-    <!-- SECCIÓN 5: BOTÓN -->
     <section class="btn-section">
       <a class="btn" href="https://chat.whatsapp.com/E8er1kUh1fWFUggxpNRKDO?s=cl&p=a&ilr=1">UNIRME A SNOW FLOWER ❄</a>
     </section>
 
-    <!-- SECCIÓN 6: FOOTER -->
     <footer class="footer">
       CLAN FEMENINO | PALETA: CELESTE HIELO + AZUL | 2026
     </footer>
